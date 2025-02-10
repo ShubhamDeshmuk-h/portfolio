@@ -446,3 +446,134 @@ nav .fas {
     font-size: 14px;
     color: #080808;
 }
+
+
+/* Default styles remain unchanged */
+
+/* Tablet View (768px and below) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    nav .logo {
+        width: 120px; 
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .header-text {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .about2 p {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    .tab-contents ul li {
+        font-size: 14px;
+    }
+
+    .proje-list {
+        flex-direction: column;
+    }
+
+    .proje img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-left, .contact-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-icons a {
+        font-size: 24px;
+        margin: 5px;
+    }
+}
+
+/* Mobile View (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    nav .logo {
+        width: 100px;
+    }
+
+    .header-text h1 {
+        font-size: 24px;
+    }
+
+    .header-text h2, .header-text h3 {
+        font-size: 16px;
+    }
+
+    .profile-pic {
+        width: 180px;
+        height: auto;
+    }
+
+    .about2 h1 {
+        font-size: 22px;
+    }
+
+    .about2 p {
+        font-size: 14px;
+    }
+
+    .tab-titles p {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .tab-contents ul li {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .proje img {
+        width: 100%;
+    }
+
+    .contact-left h1 {
+        font-size: 22px;
+    }
+
+    .contact-right form input, 
+    .contact-right form textarea {
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+}
