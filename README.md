@@ -65,9 +65,4 @@ I am **Shubham Deshmukh**, an aspiring **Cybersecurity Practitioner**, **Ethical
 ## 📬 Let's Connect!  
 
 📧 **Email:** [shubhamdeshmukh3251@gmail.com](mailto:shubhamdeshmukh3251@gmail.com)  
-💼 **LinkedIn:** [linkedin.com/in/shubham-deshmukh](https://linkedin.com/in/shubham-deshmukh)  
-🐦 **Twitter:** [@ShubhamD](https://twitter.com/your-handle)  
-
-I am always open to **collaborations, new projects, and learning opportunities** in **AI, Ethical Hacking, and Software Development**!  
-
-🚀 **Let’s innovate together!** 🚀  
+💼 **LinkedIn:** [linkedin.com/in/shubham-deshmukh](https://linkedin.com/in/shubham-deshmukh)   
