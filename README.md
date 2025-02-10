@@ -11,19 +11,7 @@ I am **Shubham Deshmukh**, an aspiring **Cybersecurity Practitioner**, **Ethical
 - 🔹 **Web & App Development**  
 
 ---
-
-## 🔥 My Projects & Achievements  
-
-✅ **TourSmart** – AI-powered **smart travel assistant** 📍 ✈️  
-✅ **AI-based Recommendation System** for Freelancers 💼  
-✅ **Automatic Timetable Generator** 📅  
-✅ **Hackathon Finalist** at **Hack2Hire** 🚀  
-✅ **Winner** at **MET IOE Project Competition** 🏆  
-
-I love solving real-world problems through **technology**, and I have participated in **multiple hackathons and competitions** with innovative solutions.  
-
----
-
+ 
 ## 🌍 My Portfolio Website  
 
 🚀 Check out my **personal portfolio website**, where I showcase my **skills, projects, and experience**!  
