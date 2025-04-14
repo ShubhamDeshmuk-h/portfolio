@@ -1,0 +1,33 @@
+{
+  "name": "shubham-portfolio",
+  "version": "1.0.0",
+  "description": "A personal portfolio website showcasing Shubham Deshmukh's profile, achievements, tech stack, notable repositories, certifications, and contact information.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined yet.'"
+  },
+  "keywords": [
+    "portfolio",
+    "personal",
+    "website",
+    "shubham deshmukh"
+  ],
+  "author": "Shubham Deshmukh",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "https://your-portfolio-url.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/shubham-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/shubham-portfolio/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
