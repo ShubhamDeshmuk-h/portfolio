@@ -1,56 +1,72 @@
-// JavaScript for Shubham Deshmukh's Portfolio
+'use strict';
 
-// Auto Year for Footer
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+
+/**
+ * add event listener on multiple elements
+ */
+
+const addEventOnElements = function (elements, eventType, callback) {
+  for (let i = 0, len = elements.length; i < len; i++) {
+    elements[i].addEventListener(eventType, callback);
+  }
+}
+
+
+
+/**
+ * NAVBAR TOGGLE FOR MOBILE
+ */
+
+const navbar = document.querySelector("[data-navbar]");
+const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+const overlay = document.querySelector("[data-overlay]");
+
+const toggleNavbar = function () {
+  navbar.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("nav-active");
+}
+
+addEventOnElements(navTogglers, "click", toggleNavbar);
+
+
+
+/**
+ * HEADER
+ * active header when window scroll down to 100px
+ */
+
+const header = document.querySelector("[data-header]");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 100) {
+    header.classList.add("active");
+  } else {
+    header.classList.remove("active");
+  }
 });
 
-// Menu Toggle Functionality
-const sidemenu = document.getElementById('sidemenu');
-document.getElementById('openmenu').addEventListener('click', () => {
-    sidemenu.style.right = "0";
-});
-document.getElementById('closemenu').addEventListener('click', () => {
-    sidemenu.style.right = "-200px";
-});
 
-// Smooth Scrolling for Navigation Links
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-    });
-});
 
-// Form Validation
-const contactForm = document.querySelector('form[name="submit-to-google-sheet"]');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = contactForm.Name.value;
-    const email = contactForm.Email.value;
-    const message = contactForm.Message.value;
+/**
+ * SCROLL REVEAL
+ */
 
-    if (name && email && message) {
-        // Handle form submission logic here
-        alert('Form submitted successfully!');
-        contactForm.reset();
-    } else {
-        alert('Please fill in all fields.');
+const revealElements = document.querySelectorAll("[data-reveal]");
+const revealDelayElements = document.querySelectorAll("[data-reveal-delay]");
+
+const reveal = function () {
+  for (let i = 0, len = revealElements.length; i < len; i++) {
+    if (revealElements[i].getBoundingClientRect().top < window.innerHeight / 1.2) {
+      revealElements[i].classList.add("revealed");
     }
-});
+  }
+}
 
-// Dynamic Content Loading (Example for Achievements)
-const achievementsSection = document.getElementById('achievements');
-fetch('path/to/achievements.json')
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(achievement => {
-            const achievementItem = document.createElement('div');
-            achievementItem.classList.add('achievement-item');
-            achievementItem.innerHTML = `<h3>${achievement.title}</h3><p>${achievement.description}</p>`;
-            achievementsSection.appendChild(achievementItem);
-        });
-    })
-    .catch(error => console.error('Error loading achievements:', error));
+for (let i = 0, len = revealDelayElements.length; i < len; i++) {
+  revealDelayElements[i].style.transitionDelay = revealDelayElements[i].dataset.revealDelay;
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
