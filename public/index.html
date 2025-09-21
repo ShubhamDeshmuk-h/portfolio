@@ -6,593 +6,1329 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 
-    - primary meta tags
-  -->
-  <title>Shubham - I'm Webdeveloper.</title>
-  <meta name="title" content="Shuhbham - Software developer & Security reasearcher.">
-  <meta name="description" content="This is a personal portfolio website of Shubham. I am a software developer and security researcher.">
-  <meta name="keywords" content="Shubham, Software developer, Security researcher, Portfolio, Personal website">
-  <meta name="author" content="Shubham">
+  <!-- Primary meta tags -->
+  <title>Shubham Deshmukh - Full Stack Developer & Security Researcher</title>
+  <meta name="title" content="Shubham Deshmukh - Full Stack Developer & Security Researcher">
+  <meta name="description" content="Professional portfolio of Shubham Deshmukh, a skilled full-stack developer and cybersecurity specialist with expertise in web development, software engineering, and security research.">
+  <meta name="keywords" content="Shubham Deshmukh, Full Stack Developer, Security Researcher, Web Development, Software Engineer, Cybersecurity, React, Node.js, Python">
+  <meta name="author" content="Shubham Deshmukh">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <meta name="google" content="notranslate">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#1a1a1a">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Shubham - Software developer & Security reasearcher.">
-  <meta name="msapplication-TileColor" content="#ffffff"> 
+  <meta name="apple-mobile-web-app-title" content="Shubham Deshmukh Portfolio">
+  <meta name="msapplication-TileColor" content="#1a1a1a"> 
 
-  <!-- 
-    - favicon
-  -->
+  <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- 
-    - google font link
-  -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-dark: #1a1a1a;
+      --secondary-dark: #2a2a2a;
+      --tertiary-dark: #3a3a3a;
+      --accent-gray: #666666;
+      --light-gray: #999999;
+      --border-gray: #e5e5e5;
+      --text-dark: #333333;
+      --text-medium: #666666;
+      --text-light: #999999;
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --card-bg: #ffffff;
+      
+      --font-primary: 'Inter', sans-serif;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
 
-  <!-- 
-    - preload images
-  -->
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--white);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header Styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-gray);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--accent-gray);
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-dark);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      width: 25px;
+      height: 3px;
+      background: var(--primary-dark);
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 6rem;
+      background: var(--off-white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .hero-text .highlight {
+      color: var(--accent-gray);
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      color: var(--text-medium);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-dark);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-dark);
+      border: 2px solid var(--primary-dark);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* About Section */
+    .about {
+      padding: 6rem 0;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--text-medium);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    .about-text h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      color: var(--text-medium);
+      line-height: 1.7;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-gray);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .skill-card h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .skill-card p {
+      color: var(--text-medium);
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-progress {
+      background: var(--border-gray);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-progress-bar {
+      height: 100%;
+      background: var(--primary-dark);
+      border-radius: 4px;
+      transition: width 1s ease-in-out;
+    }
+
+    .skill-percentage {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-align: right;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 6rem 0;
+      background: var(--off-white);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border-gray);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .project-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--tertiary-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+    }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: var(--off-white);
+      color: var(--text-dark);
+      border: 1px solid var(--border-gray);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .project-content h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .project-content p {
+      color: var(--text-medium);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .project-link:hover {
+      color: var(--accent-gray);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 6rem 0;
+      background: white;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: var(--text-medium);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--off-white);
+      border-radius: 0.375rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+      border: 1px solid var(--border-gray);
+    }
+
+    .contact-item a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent-gray);
+    }
+
+    .contact-form {
+      background: var(--off-white);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-gray);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--border-gray);
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background: white;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary-dark);
+      box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary-dark);
+      color: var(--light-gray);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: var(--secondary-dark);
+      border-radius: 0.375rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light-gray);
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--tertiary-dark);
+      color: white;
+    }
+
+    .copyright {
+      font-size: 0.875rem;
+      color: var(--light-gray);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: var(--shadow-lg);
+        border-radius: 0 0 0.5rem 0.5rem;
+        border-top: 1px solid var(--border-gray);
+      }
+      
+      .nav.active {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: flex;
+      }
+
+      .mobile-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .mobile-menu.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Icon Styles */
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .project-icon {
+      width: 60px;
+      height: 60px;
+      fill: currentColor;
+    }
+  </style>
+
+  <!-- Preload images -->
   <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
-  <link rel="preload" as="image" href="./assets/images/Blog.svg">
-
 </head>
 
 <body>
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="#" class="logo">
-        <img src="./assets/images/logo-dark.svg" width="64" height="24" alt="ShubhamDeshmuk-h home">
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <div class="navbar-top">
-          <a href="#" class="logo">
-            <img src="./assets/images/logo-light.svg" width="64" height="24" alt="ShubhamDeshmuk-h">
-          </a>
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link">About</a>
-          </li>
-
-          <li>
-            <a href="#projects" class="navbar-link">Projects</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link">Contact</a>
-          </li>
-
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#home" class="logo">SD</a>
+      
+      <nav>
+        <ul class="nav">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-
-        <div class="wrapper">
-          <a href="mailto:shubhamdeshmukh3251@gmail.com" class="contact-link">shubhamdeshmukh3251@gmail.com</a>
-
-          <a href="tel:7030368111" class="contact-link">+91 7030368111</a>
-        </div>
-
-        <ul class="social-list">
-
-          <li>
-            <a href="https://github.com/ShubhamDeshmuk-h" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.linkedin.com/in/shubham-deshmukh-profile/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
       </nav>
 
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
+      <div class="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text fade-in">
+          <h1>Hi, I'm <span class="highlight">Shubham Deshmukh</span></h1>
+          <p>A passionate Full-Stack Developer and Security Researcher specializing in building scalable web applications and implementing robust cybersecurity solutions.</p>
+          
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              View My Work
+              <svg class="icon" viewBox="0 0 16 16">
+                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
 
+        <div class="hero-image fade-in">
+          <img src="./assets/images/hero-banner.jpg" alt="Shubham Deshmukh" width="400" height="400">
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>About Me</h2>
+        <p>Dedicated to creating innovative solutions through code and security expertise</p>
+      </div>
 
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section id="home" class="section hero" aria-label="home">
-        <div class="container">
-
-          <figure class="hero-banner">
-            <img src="./assets/images/hero-banner.jpg" width="560" height="540" alt="Shubham" class="w-100"
-              data-reveal="top">
-
-            <img src="./assets/images/hero-shape.svg" width="203" height="91" alt="250+ Projects Done" class="shape"
-              data-reveal="top" data-reveal-delay="0.25s">
-          </figure>
-
-          <div class="hero-content">
-
-            <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
-              I'm Professional FullStack Web Developer & Software Engineer .
-            </h1>
-
-            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
-              Hello! I'm Shubham Deshmukh, a Final year IT student working in field of Software development and Security.
-            </p>
-
-            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
-              <a href="#" class="btn btn-primary">See My Works</a>
-
-              <a href="#" class="btn btn-secondary">Contact Me</a>
+      <div class="about-content">
+        <div class="about-text fade-in">
+          <h3>Who I Am</h3>
+          <p>I'm a final-year Information Technology student with a passion for software development and cybersecurity. My expertise spans full-stack web development, security research, and creating efficient, scalable solutions for complex technical challenges.</p>
+          
+          <p>With hands-on experience in modern web technologies and security frameworks, I focus on building applications that are not only functional and user-friendly but also secure and performance-optimized.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                </svg>
+              </div>
+              <span>shubhamdeshmukh3251@gmail.com</span>
             </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122L9.98 10.72c-.197.099-.456.099-.653 0L7.28 9.674c-.197-.099-.197-.357 0-.456L9.327 7.17c.197-.099.456-.357.456-.653 0-.296-.259-.554-.456-.653L7.28 4.82c-.197-.099-.456-.099-.653 0L4.58 5.866c-.296.197-.554.456-.653.653-.099.197-.099.456 0 .653L5.973 9.22c.099.197.357.456.653.456.296 0 .554-.259.653-.456L9.327 7.17c.197-.099.456-.357.456-.653 0-.296-.259-.554-.456-.653L7.28 4.82c-.197-.099-.456-.099-.653 0L4.58 5.866c-.296.197-.554.456-.653.653-.099.197-.099.456 0 .653z"/>
+                </svg>
+              </div>
+              <span>+91 7030368111</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="skills-grid fade-in">
+          <div class="skill-card">
+            <h4>Full-Stack Development</h4>
+            <p>Proficient in modern web technologies including React, Node.js, Python, and database management.</p>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 90%"></div>
+            </div>
+            <div class="skill-percentage">90%</div>
           </div>
 
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section id="about" class="section about" aria-label="about">
-        <div class="container">
-
-          <div class="wrapper">
-
-            <div data-reveal="left">
-              <h2 class="h2 section-title">What I Do?</h2>
-
-              <p class="section-text">
-                I build and Deploy Software solution tools and products for various clients. I am a software developer and
-                security researcher. I have worked on various projects and have a good knowledge of programming languages
-                like C++, Python, and JavaScript. I am also familiar with web development technologies like HTML,
-                CSS, and JavaScript. I have a good understanding of data structures and algorithms. I am also familiar with
-                various databases like MySQL, MongoDB, and Firebase. I am also familiar with various frameworks like React,
-                Node.js, and Express.js. I am also familiar with various tools like Git, GitHub, and Visual Studio Code.
-              </p>
+          <div class="skill-card">
+            <h4>Cybersecurity</h4>
+            <p>Experienced in security analysis, vulnerability assessment, and implementing security best practices.</p>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 85%"></div>
             </div>
-
-            <ul class="progress-list" data-reveal="right">
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Web Developed</p>
-
-                  <span class="span">100 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 100%; background-color: #c7b1dd"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Security Project</p>
-
-                  <span class="span">80 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 80%; background-color: #8caeec"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Development</p>
-
-                  <span class="span">85 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 85%; background-color: #b0d4c1"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Deployment</p>
-
-                  <span class="span">90 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 90%; background-color: #e3a6b6"></div>
-                </div>
-
-              </li>
-
-            </ul>
-
+            <div class="skill-percentage">85%</div>
           </div>
 
-          <ul class="grid-list">
-
-            <li data-reveal="bottom">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-1.svg" width="52" height="52" loading="lazy" alt="web design icon">
-                </div>
-
-                <h3 class="h4 card-title">Web Developed</h3>
-
-                <p class="card-text">
-                  I have hands-on experience in full-stack web development, using HTML, CSS, JavaScript, and React for frontend, and Python (Flask/Django) for backend.
-                  I integrate databases like SQLite and MongoDB, work with APIs, deployment tools, and use Git for version control. 
-                  My focus is on building responsive, scalable, and user-friendly web applications.
-                </p>
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.25s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-2.svg" width="52" height="52" loading="lazy" alt="mobile design icon">
-                </div>
-
-                <h3 class="h4 card-title">Security Project</h3>
-
-                <p class="card-text">
-                  My security project ensures strong protection for web and mobile apps by using encryption, authentication, and real-time threat detection. 
-                  It’s built to be scalable, efficient, and user-friendly while safeguarding data from cyber threats.
-                </p>
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.5s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-3.svg" width="52" height="52" loading="lazy"
-                    alt="web development icon">
-                </div>
-
-                <h3 class="h4 card-title">Development</h3>
-
-                <p class="card-text">
-                  My development project focuses on building fast, responsive, and user-friendly web applications. 
-                  Using modern tools and frameworks, it ensures smooth performance, clean design, and scalability for real-world use.
-                </p>
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.75s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-4.svg" width="52" height="52" loading="lazy" alt="web seo icon">
-                </div>
-
-                <h3 class="h4 card-title">Deployment</h3>
-
-                <p class="card-text">
-                  My deployment process ensures that applications are smoothly delivered with high performance and reliability. 
-                  Using tools like Git, CI/CD pipelines, and cloud platforms, I make sure every update is seamless and production-ready.
-                </p>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #PROJECT
-      -->
-
-      <section id="projects" class="section project" aria-labelledby="project-label">
-        <div class="container">
-
-          <div class="title-wrapper" data-reveal="top">
-
-            <div>
-              <h2 class="h2 section-title" id="project-label">Latest Projects</h2>
-
-              <p class="section-text">
-                Check out some of my latest projects with great ideas.
-              </p>
+          <div class="skill-card">
+            <h4>System Architecture</h4>
+            <p>Skilled in designing scalable systems, API development, and cloud deployment strategies.</p>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 80%"></div>
             </div>
-
-            <a href="https://github.com/ShubhamDeshmuk-h" class="btn btn-secondary">See All Projects</a>
-
+            <div class="skill-percentage">80%</div>
           </div>
 
-          <ul class="grid-list">
-
-            <li>
-              <div class="project-card project-card-1" style="background-color: #f8f5fb">
-
-                <div class="card-content" data-reveal="left">
-
-                  <p class="card-tag" style="color: #a07cc5">Security Project</p>
-
-                  <h3 class="h3 card-title">Automatic time table Generator</h3>
-
-                  <p class="card-text">
-                    Automatic time table generator is a software application that creates a schedule for classes, exams, or events based on user-defined parameters.
-                    It uses algorithms to optimize the allocation of resources, such as rooms and instructors, while considering constraints like availability and preferences.
-                    The goal is to streamline the scheduling process, reduce conflicts, and improve efficiency.
-                  </p>
-
-                  <a href="#" class="btn-text" style="color: #a07cc5">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="right">
-                  <img src="./assets/images/project-1.png" width="650" height="370" loading="lazy" alt="Security Project"
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="project-card project-card-2" style="background-color: #f1f5fd">
-
-                <div class="card-content" data-reveal="right">
-
-                  <p class=" card-tag" style="color: #3f78e0">Web Development</p>
-
-                  <h3 class="h3 card-title">Ecommerse website</h3>
-
-                  <p class="card-text">
-                    Project built for the best e-commerce experience, featuring a user-friendly interface, secure payment integration, and responsive design. 
-                    It ensures seamless navigation and efficient management of products, orders, and customer data.
-                  </p>
-                    
-                  </p>
-
-                  <a href="#" class="btn-text" style="color: #3f78e0">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="left">
-                  <img src="./assets/images/project-2.png" width="600" height="367" loading="lazy" alt="Web Development "
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="project-card project-card-3" style="background-color: #f5faf7">
-
-                <div class="card-content" data-reveal="left">
-
-                  <p class=" card-tag" style="color: #7cb798">Web Design</p>
-
-                  <h3 class="h3 card-title">Missio Theme</h3>
-
-                  <p class="card-text">
-                    Maecenas faucibus mollis interdum sed posuere porta consectetur cursus porta lobortis. Scelerisque
-                    id ligula felis.
-                  </p>
-
-                  <a href="#" class="btn-text" style="color: #7cb798">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="right">
-                  <img src="./assets/images/project-3.png" width="600" height="367" loading="lazy" alt="Web Design"
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="project-card project-card-4" style="background-color: #fcf4f6">
-
-                <div class="card-content" data-reveal="left">
-
-                  <p class=" card-tag" style="color: #d16b86">Mobile Design</p>
-
-                  <h3 class="h3 card-title">Storage App</h3>
-
-                  <p class="card-text">
-                    Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis. Scelerisque id ligula
-                    porta felis euismod semper.
-                  </p>
-
-                  <a href="#" class="btn-text" style="color: #d16b86">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="right">
-                  <img src="./assets/images/project-4.png" width="620" height="370" loading="lazy" alt="Mobile Design"
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #CONTACT
-      -->
-
-      <section id="contact" class="section contact" aria-label="contact">
-        <div class="container">
-
-          <div class="contact-card">
-
-            <div class="contact-content" data-reveal="left">
-
-              <div class="card-icon">
-                <img src="./assets/images/icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon">
-              </div>
-
-              <h2 class="h2 section-title">If you like what you see, let's work together.</h2>
-
-              <p class="section-text">
-                I bring rapid solutions to make the life of my clients easier. Have any questions? Reach out to me from
-                this contact form and I will get back to you shortly.
-              </p>
-
+          <div class="skill-card">
+            <h4>Problem Solving</h4>
+            <p>Strong analytical skills with expertise in algorithms, data structures, and optimization techniques.</p>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 95%"></div>
             </div>
+            <div class="skill-percentage">95%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <form action="https://formspree.io/f/xgvnweek" method="POST" class="contact-form" data-reveal="right">
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Featured Projects</h2>
+        <p>A showcase of my recent work in web development and security research</p>
+      </div>
 
-              <div class="input-wrapper">
-                <input type="text" name="name" placeholder="Name *" required class="input-field">
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <svg class="project-icon" viewBox="0 0 24 24">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Algorithm & Security</span>
+            <h3>Intelligent Timetable Generator</h3>
+            <p>An automated scheduling system that optimizes resource allocation using advanced algorithms. Features conflict resolution, constraint satisfaction, and efficient resource management for educational institutions.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                View Project
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                  <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
 
-                <input type="email" name="email_address" placeholder="Email *" required class="input-field">
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <svg class="project-icon" viewBox="0 0 24 24">
+              <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Full-Stack Development</span>
+            <h3>Advanced E-Commerce Platform</h3>
+            <p>A comprehensive e-commerce solution with secure payment integration, real-time inventory management, and responsive design. Built with modern web technologies for optimal performance and user experience.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                View Project
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                  <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <svg class="project-icon" viewBox="0 0 24 24">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Cybersecurity</span>
+            <h3>Security Analysis Tool</h3>
+            <p>A comprehensive security assessment platform featuring automated vulnerability scanning, threat detection, and detailed security reporting for web applications and systems.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                View Project
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                  <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <svg class="project-icon" viewBox="0 0 24 24">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Data Management</span>
+            <h3>Cloud Storage Management</h3>
+            <p>A modern cloud storage solution with real-time synchronization, file sharing capabilities, and advanced security features. Includes mobile and web interfaces for seamless cross-platform access.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                View Project
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                  <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <svg class="project-icon" viewBox="0 0 24 24">
+              <path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Performance Optimization</span>
+            <h3>High-Performance Web Framework</h3>
+            <p>A lightweight, fast web framework optimized for modern applications. Features include automated caching, lazy loading, and performance monitoring tools for enterprise-level scalability.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                View Project
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                  <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <svg class="project-icon" viewBox="0 0 24 24">
+              <path d="M9 11H7v3h2v-3zm4 0h-2v3h2v-3zm4 0h-2v3h2v-3zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">AI & Machine Learning</span>
+            <h3>Intelligent Code Analyzer</h3>
+            <p>An AI-powered code analysis tool that provides automated code reviews, security vulnerability detection, and performance optimization suggestions using machine learning algorithms.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                View Project
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                  <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="https://github.com/ShubhamDeshmuk-h" class="btn btn-primary">View All Projects on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Let's Work Together</h2>
+        <p>Ready to bring your ideas to life? Let's discuss your next project</p>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-info fade-in">
+          <h3>Get In Touch</h3>
+          <p>I'm always open to discussing new opportunities, innovative projects, and ways we can collaborate. Whether you need a full-stack developer, security consultant, or technical advisor, I'm here to help.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                </svg>
               </div>
+              <div>
+                <strong>Email</strong><br>
+                <a href="mailto:shubhamdeshmukh3251@gmail.com">shubhamdeshmukh3251@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122L9.98 10.72c-.197.099-.456.099-.653 0L7.28 9.674c-.197-.099-.197-.357 0-.456L9.327 7.17c.197-.099.456-.357.456-.653 0-.296-.259-.554-.456-.653L7.28 4.82c-.197-.099-.456-.099-.653 0L4.58 5.866c-.296.197-.554.456-.653.653-.099.197-.099.456 0 .653L5.973 9.22c.099.197.357.456.653.456.296 0 .554-.259.653-.456L9.327 7.17c.197-.099.456-.357.456-.653 0-.296-.259-.554-.456-.653L7.28 4.82c-.197-.099-.456-.099-.653 0L4.58 5.866c-.296.197-.554.456-.653.653-.099.197-.099.456 0 .653z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Phone</strong><br>
+                <a href="tel:+917030368111">+91 7030368111</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Location</strong><br>
+                Nashik, Maharashtra, India
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="icon" viewBox="0 0 16 16">
+                  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Response Time</strong><br>
+                Within 24 hours
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
-
-              <button type="submit" class="btn btn-secondary">Send message</button>
-
-            </form>
-
+        <form action="https://formspree.io/f/xgvnweek" method="POST" class="contact-form fade-in">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name *</label>
+            <input type="text" id="name" name="name" class="form-input" required>
           </div>
 
-        </div>
-      </section>
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" name="email_address" class="form-input" required>
+          </div>
 
-    </article>
-  </main>
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-input">
+          </div>
 
+          <div class="form-group">
+            <label for="message" class="form-label">Message *</label>
+            <textarea id="message" name="message" class="form-input form-textarea" required placeholder="Tell me about your project or how I can help you..."></textarea>
+          </div>
 
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Message
+            <svg class="icon" viewBox="0 0 16 16">
+              <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-
-      <p class="copyright">
-        © 2025 ShubhamDeshmuk-h. All rights reserved.
-      </p>
-
-      <ul class="social-list">
-
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-github"></ion-icon>
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="https://github.com/ShubhamDeshmuk-h" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
           </a>
-        </li>
-
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-whatsapp"></ion-icon>
+          <a href="https://www.linkedin.com/in/shubham-deshmukh-profile/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+            </svg>
           </a>
-        </li>
-
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-instagram"></ion-icon>
+          <a href="mailto:shubhamdeshmukh3251@gmail.com" class="social-link" aria-label="Email">
+            <svg class="icon" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg>
           </a>
-        </li>
-      </ul>
-
+        </div>
+        
+        <p class="copyright">
+          &copy; 2025 Shubham Deshmukh. All rights reserved. Built with passion and precision.
+        </p>
+      </div>
     </div>
   </footer>
 
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const nav = document.querySelector('.nav');
+    
+    if (mobileMenu && nav) {
+      mobileMenu.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+    }
 
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.header-container') && nav && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
+    });
 
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const targetPosition = target.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (nav && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            mobileMenu.classList.remove('active');
+          }
+        }
+      });
+    });
 
+    // Header Background on Scroll
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = 'var(--shadow-md)';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = 'none';
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
 
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+    // Scroll Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Animate skill bars when about section comes into view
+          if (entry.target.closest('.about')) {
+            setTimeout(() => {
+              const skillBars = entry.target.querySelectorAll('.skill-progress-bar');
+              skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                  bar.style.width = width;
+                }, 100);
+              });
+            }, 200);
+          }
+        }
+      });
+    }, observerOptions);
 
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Form Submission Enhancement
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = `
+          <svg class="icon" viewBox="0 0 16 16" style="animation: spin 1s linear infinite;">
+            <path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+          </svg>
+          Sending...
+        `;
+        submitBtn.disabled = true;
+        
+        // Re-enable button after form processes (Formspree handles the actual submission)
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 3000);
+      });
+    }
+
+    // Add loading animation for spinning icon
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Enhanced mobile responsiveness */
+      @media (max-width: 640px) {
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+        
+        .hero-text p {
+          font-size: 1.125rem;
+        }
+        
+        .hero-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        
+        .btn {
+          justify-content: center;
+          width: 100%;
+        }
+        
+        .section-header h2 {
+          font-size: 2rem;
+        }
+        
+        .project-content {
+          padding: 1.5rem;
+        }
+        
+        .contact-form {
+          padding: 1.5rem;
+        }
+      }
+      
+      /* Improved focus states for accessibility */
+      .btn:focus,
+      .nav-link:focus,
+      .form-input:focus {
+        outline: 2px solid var(--primary-dark);
+        outline-offset: 2px;
+      }
+      
+      /* Enhanced button hover effects */
+      .btn {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+      }
+      
+      .btn:hover::before {
+        left: 100%;
+      }
+      
+      /* Smooth scrolling for all browsers */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        
+        .fade-in,
+        .skill-progress-bar,
+        .btn,
+        .project-card,
+        .skill-card {
+          transition: none;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Keyboard navigation for mobile menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Preload critical images
+    const preloadImages = [
+      './assets/images/hero-banner.jpg'
+    ];
+    
+    preloadImages.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+
+    // Performance optimization: Lazy load non-critical elements
+    const lazyElements = document.querySelectorAll('.project-card, .skill-card');
+    const lazyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.willChange = 'transform';
+          lazyObserver.unobserve(entry.target);
+        }
+      });
+    });
+
+    lazyElements.forEach(el => {
+      lazyObserver.observe(el);
+    });
+
+    // Add error handling for form submission
+    if (contactForm) {
+      contactForm.addEventListener('error', function() {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = 'Error - Try Again';
+        submitBtn.style.background = '#dc2626';
+        
+        setTimeout(() => {
+          submitBtn.innerHTML = `
+            Send Message
+            <svg class="icon" viewBox="0 0 16 16">
+              <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+            </svg>
+          `;
+          submitBtn.style.background = 'var(--primary-dark)';
+          submitBtn.disabled = false;
+        }, 3000);
+      });
+    }
+  </script>
 </body>
 
 </html>
